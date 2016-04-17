@@ -134,7 +134,7 @@ RCT_EXPORT_METHOD(lockToLandscape)
   #if DEBUG
     NSLog(@"Locked to Landscape");
   #endif
-  UIDeviceOrientation orientation = [[UIDevice currentDevice] orientation];
+  UIInterfaceOrientation orientation = [[UIApplication sharedApplication] statusBarOrientation];
   NSString *orientationStr = [self getSpecificOrientationStr:orientation];
   if ([orientationStr isEqualToString:@"LANDSCAPE-LEFT"]) {
     [Orientation setOrientation:UIInterfaceOrientationMaskLandscape];
